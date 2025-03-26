@@ -18,14 +18,14 @@ body{
     padding: var(--spacing-large);
 }
 /* ------------ */
-.people-header{
+.character-header{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: var(--spacing-small);
 }
-.people-header__title{
+.character-header__title{
     text-align: center;
     font-family: StarJedi;
     color: var(--color-yellow);
@@ -35,7 +35,7 @@ main{
     flex-grow: 1;
 }
 /* ------------ */
-.explore-people{
+.explore-characters{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,3 +85,69 @@ main{
     font-size: var(--font-size-small);
     color: var(--color-red);
 }
+
+/* --------------- */
+
+/* Character Container */
+.character-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: var(--spacing-large);
+}
+
+/* Character li items */
+.character-card__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-card__item {
+    padding: var(--spacing-large);
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid var(--color-yellow);
+    background-color: var(--color-yellow);
+}
+
+/* Hover effect */
+
+
+/* Character Image */
+.character-poster {
+    width: 100%;  
+    border: 3px solid var(--color-black);
+    border-radius: 20px;
+}
+
+/* Title */
+.character-card__item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-black);
+    font-family: StarJedi;
+    font-size: var(--font-size-medium);
+}
+
+/* Info */
+.character-card__item p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: var(--color-black);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+/* Info Headers */
+.info-header {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
