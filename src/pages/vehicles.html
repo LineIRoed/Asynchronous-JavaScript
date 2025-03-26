@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/planets.css">
-    <title>Planets</title>
+    <link rel="stylesheet" href="../css/vehicles.css">
+    <title>Vehicles</title>
 </head>
 <body>
     <header>
-        <header class="planets-header">
-          <span class="planets-header__icon-container">
+        <header class="vehicles-header">
+          <span class="vehicles-header__icon-container">
             <img src="../assets/icons/stormtrooper-svgrepo-com.svg" alt="Website main logo">
           </span>
-          <h1 class="planets-header__title">
-            Explore Planets
-          </h1>
+          <h1 class="vehicles-header__title">Explore vehicles</h1>
         </header>
     </header>
     <main>
@@ -27,27 +25,27 @@
                 <img class="back-button__logo" src="../assets/icons/back-button-svgrepo-com.svg">
             </a>
         </div>
-        <div class="explore-planets">
+        <div class="explore-vehicles">
             <form class="search-form">
-                <label for="search">Planet name</label>
+                <label for="search">Vehicle name</label>
                 <input 
                     type="search" 
                     name="search" 
                     id="search" 
-                    placeholder="Enter Planet name" 
+                    placeholder="Enter Vehicle name" 
                     class="search-form__input"
                 />
                 <button type="submit" class="search-form__submit-button">Search</button>
             </form>
-            <p class="search-form__error-message" style="display:none;">No movie found</p>
-            <div class="planets-card-container">
-                <span class="planets-card__image"></span>
-                <div class="planets-card">
-                    <ul class="planets-card__list"></ul>
+            <p class="search-form__error-message" style="display:none;">No vehicle found</p>
+            <div class="vehicles-card-container">
+                <span class="vehicles-card__image"></span>
+                <div class="vehicles-card">
+                    <ul class="vehicles-card__list"></ul>
                 </div>
             </div>
         </div>
     </main>
-    <script src="../js/fetchPlanets.js"></script>
+    <script src="../js/fetchVehicles.js"></script>
 </body>
 </html>
