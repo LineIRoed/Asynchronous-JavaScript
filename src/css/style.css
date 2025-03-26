@@ -1,0 +1,92 @@
+@font-face {
+    font-family: AlumniSans;
+    src: url(../assets/fonts/AlumniSansPinstripe-Regular.ttf);
+}
+@font-face {
+    font-family: StarJedi;
+    src: url(../assets/fonts/Starjedi.ttf);
+}
+body{
+    min-width: 380px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: AlumniSans;
+    background-color: var(--color-black);
+    color: var(--color-black);
+    padding: var(--spacing-large);
+}
+/* -------------- */
+.home-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+.home-header__title{
+    text-align: center;
+    font-family: StarJedi;
+    color: var(--color-yellow);
+}
+/* -------------- */
+main{
+    flex-grow: 1;
+}
+/* -------------- */
+.features-container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-large);
+    padding: var(--spacing-large);
+}
+/* -------------- */
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: var(--color-yellow);
+    border: 2px solid black;
+    border-radius: 20px;
+    gap: var(--spacing-small);
+}
+.card__image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 250px;
+    border-radius: 10px;
+}
+.card__title{
+    font-size: var(--font-size-medium);
+    font-family: StarJedi;
+}
+.card__description{
+    font-size: var(--font-size-small);
+}
+.card__link{
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-yellow);
+    font-size: var(--font-size-Xsmall);
+    padding: var(--spacing-small);
+    background-color: var(--color-black);
+    border-radius: 20px;
+    width: 110px;
+    font-family: StarJedi;
+    transition: background-color color 0.3s;
+}
+.card__link:hover{
+    background-color: var(--color-black);
+    color: var(--color-blue);
+}
+/* -------------- */
