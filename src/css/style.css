@@ -58,6 +58,8 @@ main{
     border-radius: 20px;
     gap: var(--spacing-small);
 }
+/* card hover here, add to other pages as well */ 
+
 .card__image{
     display: flex;
     justify-content: center;

@@ -85,5 +85,59 @@ main{
     font-size: var(--font-size-small);
     color: var(--color-red);
 }
+
 /* ------------ */
+
+/* movie poster */
+.movie-poster {
+    width: 100%;  
+    border: 3px solid var(--color-black);
+    border-radius: 20px;
+}
+
+/* movie container */
+.movies-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: var(--spacing-large);
+}
+  
+/* movie li items*/
+.movies-card__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.movies-card__item {
+    padding: var(--spacing-large);
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid var(--color-yellow);
+    background-color: var(--color-yellow);
+}
+  
+/* hover effect here */
+
+/* title */
+.movies-card__item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-black);
+    font-family: StarJedi;
+    font-size: var(--font-size-medium);
+}
+/* info */
+.movies-card__item p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: var(--color-black);
+    font-size: var(--font-size-small);
+    font-weight: 500;
+}
+.info-header {
+    font-weight: bold;
+    text-transform: uppercase;
+}
 

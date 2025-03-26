@@ -17,8 +17,10 @@
     --font-size-Xsmall: 1rem;
     --font-size-small: 1.25rem;
     --font-size-medium: 1.563rem;
-    --font-size-large: 2.5rem
+    --font-size-large: 2.5rem;
 
-    /* Border radius */
+    /* font-weight */
+    --font-weight-thick: 900;
+
 }
 
