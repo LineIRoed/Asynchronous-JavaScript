@@ -30,65 +30,81 @@ body{
     font-family: StarJedi;
     color: var(--color-yellow);
 }
+
 /* -------------- */
+
 main{
     flex-grow: 1;
 }
+
 /* -------------- */
-.features-container{
-    height: 100%;
+
+.nav-buttons__container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    gap: var(--spacing-large);
     padding: var(--spacing-large);
 }
-/* -------------- */
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 500px;
-    background-color: var(--color-yellow);
-    border: 2px solid black;
-    border-radius: 20px;
-    gap: var(--spacing-small);
-}
-/* card hover here, add to other pages as well */ 
 
-.card__image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 250px;
-    border-radius: 10px;
-}
-.card__title{
-    font-size: var(--font-size-medium);
-    font-family: StarJedi;
-}
-.card__description{
-    font-size: var(--font-size-small);
-}
-.card__link{
+.nav-buttons__button{
     text-decoration: none;
     text-align: center;
     color: var(--color-yellow);
     font-size: var(--font-size-Xsmall);
-    padding: var(--spacing-small);
+    padding: var(--spacing-medium);
     background-color: var(--color-black);
     border-radius: 20px;
-    width: 110px;
+    width: fit-content;
     font-family: StarJedi;
     transition: background-color color 0.3s;
 }
-.card__link:hover{
+.nav-buttons__button:hover{
     background-color: var(--color-black);
     color: var(--color-blue);
 }
 /* -------------- */
+
+.search-form{
+    width: 100%;
+    padding-top: var(--spacing-large);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+.search-form label{
+    display: none;
+}
+.search-form__input{
+    min-width: 260px;
+    height: 48px;
+    border: 2px solid var(--color-yellow);
+    border-radius: 20px;
+    background-color: var(--color-black);
+    padding-left: 2%;
+    color: var(--color-yellow);
+}
+.search-form__button{
+    min-width: 64px;
+    width: 110px;
+    height: 48px;
+    border: 2px solid var(--color-yellow);
+    border-radius: 20px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    transition: background-color border 0.3s;
+    font-size: var(--font-size-small);
+    font-family: StarJedi;
+}
+.search-form__button:hover{
+    background-color: var(--color-blue);
+    border: 2px solid var(--color-blue);
+}
+.search-form__error-message{
+    min-height: 48px;
+    text-align: center;
+    padding-top: var(--spacing-small);
+    font-size: var(--font-size-small);
+    color: var(--color-red);
+}
