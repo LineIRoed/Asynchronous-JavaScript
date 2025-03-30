@@ -12,12 +12,27 @@
     <link rel="stylesheet" href="./src/css/vehicles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StarWarsWorld</title>
+
+    <style>
+      @font-face {
+        font-family: starWarsFont;
+        src: url(/assets/fonts/starWarsFont.ttf);
+      }
+      @font-face {
+        font-family: AlumniSans;
+        src: url(/assets/fonts/AlumniSansPinstripe-Regular.ttf);
+      }
+
+      body {
+        font-family: "AlumniSans", "StarJedi";
+      }
+    </style>
   </head>
   <body>
     <header>
         <header class="home-header">
           <span class="home-header__icon-container">
-            <img src="./src/assets/icons/stormtrooper-svgrepo-com.svg" alt="Website main logo">
+            <img src="/assets/icons/stormtrooper-svgrepo-com.svg" alt="Stormtrooper helmet">
           </span>
           <h1 class="home-header__title">
             Welcome to StarWars World!
