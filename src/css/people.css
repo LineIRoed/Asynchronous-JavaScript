@@ -36,6 +36,9 @@ main{
     text-align: center;
     border: 2px solid var(--color-yellow);
     background-color: var(--color-yellow);
+    max-width: 70%; /* Adjust the maximum width */
+    min-height: 350px;
+    width: 70%;
 }
 
 /* Hover effect */
@@ -43,14 +46,14 @@ main{
 
 /* Character Image */
 .character-poster {
-    width: 100%;  
+    width: 100%; 
     border: 3px solid var(--color-black);
     border-radius: 20px;
 }
 
 /* Title */
 .character-card__item h3 {
-    font-size: 20px;
+    font-size: var(--font-size-small);
     font-weight: bold;
     color: var(--color-black);
     font-family: starWarsFont; /* change font */
