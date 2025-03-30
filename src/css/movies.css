@@ -43,8 +43,6 @@ main{
     text-align: center;
     border: 2px solid var(--color-yellow);
     background-color: var(--color-yellow);
-    max-width: 70%; /* Adjust the maximum width */
-    min-height: 350px;
     width: 70%;
 }
   
@@ -57,6 +55,8 @@ main{
     color: var(--color-black);
     font-family: starWarsFont;
     font-size: var(--font-size-medium);
+    text-align: center;
+    text-wrap: wrap;
 }
 
 /* info */
@@ -64,12 +64,31 @@ main{
     margin: 10px 0;
     font-size: var(--font-size-Xsmall);
     color: var(--color-black);
-    font-size: var(--font-size-small);
     font-weight: 600;
 }
 .info-header {
     font-weight: bold;
     text-transform: uppercase;
 }
-  
+
+@media screen and (max-width: 1031px) {
+    .movies-card__item {
+        width: 100%;
+    }  
+}
+@media screen and (max-width: 830px) {
+    .movies-card__item {
+        width: 100%;
+    } 
+}
+@media screen and (max-width: 642px) {
+    .movies-card__item {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 501px) {
+    .movies-card__item h3 {
+        font-size: var(--font-size-Xsmall);
+    } 
+}
 

@@ -36,6 +36,7 @@ main{
     justify-content: space-around;
     align-items: center;
     padding: var(--spacing-large);
+    gap: 2rem;
 }
 
 .nav-buttons__button{
@@ -68,7 +69,7 @@ main{
     display: none;
 }
 .search-form__input{
-    min-width: 260px;
+    min-width: 200px;
     height: 48px;
     border: 2px solid var(--color-yellow);
     border-radius: 20px;
@@ -98,4 +99,17 @@ main{
     padding-top: var(--spacing-small);
     font-size: var(--font-size-small);
     color: var(--color-red);
+}
+
+@media screen and (max-width: 1032px) {
+    .nav-buttons__container {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 524px) {
+    .search-form__input {
+        min-width: 150px;
+    }
 }

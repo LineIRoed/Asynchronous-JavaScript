@@ -36,8 +36,6 @@ main{
     text-align: center;
     border: 2px solid var(--color-yellow);
     background-color: var(--color-yellow);
-    max-width: 70%; /* Adjust the maximum width */
-    min-height: 350px;
     width: 70%;
 }
 
@@ -58,20 +56,16 @@ main{
     color: var(--color-black);
     font-family: starWarsFont; /* change font */
     font-size: var(--font-size-medium);
+    text-align: center;
+    text-wrap: wrap;
 }
 
 /* Info */
 .character-card__item p {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: var(--font-size-Xsmall);
     color: var(--color-black);
-    font-size: var(--font-size-small);
     font-weight: 600;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 0.5rem;
 }
 
 /* Info Headers */
@@ -81,3 +75,23 @@ main{
 }
 
 
+@media screen and (max-width: 1031px) {
+    .character-card__item {
+        width: 100%;
+    }  
+}
+@media screen and (max-width: 830px) {
+    .character-card__item {
+        width: 100%;
+    } 
+}
+@media screen and (max-width: 642px) {
+    .character-card__item {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 501px) {
+    .character-card__item h3 {
+        font-size: var(--font-size-Xsmall);
+    } 
+}
