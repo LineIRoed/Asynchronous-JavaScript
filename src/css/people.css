@@ -40,7 +40,9 @@ main{
 }
 
 /* Hover effect */
-
+.character-card__item:hover {
+    box-shadow: 4px 0 4px 0 var(--color-green), 0 4px 4px 4px var(--color-green)
+}
 
 /* Character Image */
 .character-poster {

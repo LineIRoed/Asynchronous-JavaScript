@@ -40,6 +40,9 @@ main{
 }
 
 /* hover effect */
+.planets-card__item:hover {
+    box-shadow: 4px 0 4px 0 var(--color-purple), 0 4px 4px 4px var(--color-purple)
+}
 
 /* planet image */
 .planets-poster {

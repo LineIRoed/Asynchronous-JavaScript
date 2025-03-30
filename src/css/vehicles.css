@@ -47,6 +47,9 @@ main{
 }
 
 /* hover effect */
+.vehicles-card__item:hover {
+    box-shadow: 4px 0 4px 0 var(--color-blue), 0 4px 4px 4px var(--color-blue)
+}
 
 /* title */
 .vehicles-card__item h3 {

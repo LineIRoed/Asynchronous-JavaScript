@@ -47,6 +47,9 @@ main{
 }
   
 /* hover effect here */
+.movies-card__item:hover {
+    box-shadow: 4px 0 4px 0 var(--color-red), 0 4px 4px 4px var(--color-red)
+}
 
 /* title */
 .movies-card__item h3 {
