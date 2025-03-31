@@ -92,6 +92,11 @@ main{
         width: 100%;
     }
 }
+@media screen and (max-width: 524px) {
+    .character-card__list {
+        width: 100%;
+    }
+}
 @media screen and (max-width: 501px) {
     .character-card__item h3 {
         font-size: var(--font-size-Xsmall);

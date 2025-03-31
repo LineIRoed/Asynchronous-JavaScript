@@ -90,6 +90,11 @@ main{
         width: 100%;
     }
 }
+@media screen and (max-width: 524px) {
+    .vehicles-card__list {
+        width: 100%;
+    }
+}
 @media screen and (max-width: 501px) {
     .vehicles-card__item h3 {
         font-size: var(--font-size-Xsmall);
