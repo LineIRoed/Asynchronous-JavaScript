@@ -1,4 +1,4 @@
-// vehicle images
+// Get vehicle images
 const vehicleImages = {
     "Sand Crawler": "/assets/vehicles/Sandcrawler.jpg",
     "T-16 skyhopper": "/assets/vehicles/T-16skyhopper.jpg",
@@ -14,6 +14,7 @@ const vehicleImages = {
 
 let vehiclesDataArray = [];
 
+// Create bold header and text
 function createVehiclesDetail(header, text) {
     const vehicleDetail = document.createElement("p");
     const strongHeader = document.createElement("strong");
@@ -26,7 +27,7 @@ function createVehiclesDetail(header, text) {
     return vehicleDetail;
 };
 
-// Create search form similar to the movie search form
+// search bar
 function createSearchForm() {
     const searchForm = document.createElement("form");
     searchForm.classList.add("search-form");
@@ -47,7 +48,7 @@ function createSearchForm() {
     return searchForm;
 };
 
-// fundtion to display vehicles
+// display vehicles
 const displayVehicles = (vehiclesData) => {
     const mainElement = document.querySelector("main");
     const vehiclesList = document.createElement("ul");
@@ -62,7 +63,7 @@ const displayVehicles = (vehiclesData) => {
             const vehicleItem = document.createElement("li");
             vehicleItem.classList.add("vehicles-card__item");
 
-            // add vehicle image
+            // adding vehicle images
             const vehicleImage = document.createElement("img");
             const vehicleUrl = vehicleImages[vehicle.name];
             vehicleImage.src = vehicleUrl;
@@ -71,12 +72,12 @@ const displayVehicles = (vehiclesData) => {
             vehicleItem.appendChild(vehicleImage);
 
 
-            // add vehicle name
+            // vehicle name
             const vehicleName = document.createElement("h3");
             vehicleName.textContent = vehicle.name;
             vehicleItem.appendChild(vehicleName);
 
-            // add planet detailes
+            // planet detailes
             vehicleItem.appendChild(createVehiclesDetail("Model", vehicle.model));
             vehicleItem.appendChild(createVehiclesDetail("Manufacturer", vehicle.manufacturer));
             vehicleItem.appendChild(createVehiclesDetail("Cost in credits", vehicle.cost_in_credits));

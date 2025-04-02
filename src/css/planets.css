@@ -76,6 +76,7 @@ main{
     text-transform: uppercase;
 }
 
+/* media queries */
 @media screen and (max-width: 1031px) {
     .planets-card__item {
         width: 100%;

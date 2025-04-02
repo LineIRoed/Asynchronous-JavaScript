@@ -1,4 +1,4 @@
-// planet images
+// Get planet images
 const planetImages = {
     "Tatooine": "/assets/planets/Tatooine.jpg",
     "Alderaan": "/assets/planets/Alderaan.jpg",
@@ -14,6 +14,7 @@ const planetImages = {
 
 let planetsDataArray = [];
 
+// Create bold header and text
 function createPlanetsDetail(header, text) {
     const planetDetail = document.createElement("p");
     const strongHeader = document.createElement("strong");
@@ -26,7 +27,7 @@ function createPlanetsDetail(header, text) {
     return planetDetail;
 }
 
-// Create search form similar to the movie search form
+// Search bar
 function createSearchForm() {
     const searchForm = document.createElement("form");
     searchForm.classList.add("search-form");
@@ -47,7 +48,7 @@ function createSearchForm() {
     return searchForm;
   };
 
-  //function to display planets
+  // display planets
   const displayPlanets = (planetsData) => {
     const mainElement = document.querySelector("main");
     const planetsList = document.createElement("ul");
@@ -70,12 +71,12 @@ function createSearchForm() {
             planetImage.classList.add("planets-poster");
             planetItem.appendChild(planetImage);
 
-            //add planet name
+            // planet name
             const planetName = document.createElement("h3");
             planetName.textContent = planet.name;
             planetItem.appendChild(planetName);
 
-            //add planet detailes
+            // planet detailes
             planetItem.appendChild(createPlanetsDetail("Climate", planet.climate));
             planetItem.appendChild(createPlanetsDetail("Terrain", planet.terrain));
             planetItem.appendChild(createPlanetsDetail("Diameter", planet.diameter));

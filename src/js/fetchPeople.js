@@ -1,3 +1,4 @@
+// Get character posters
 const characterPosters = {
   "Luke Skywalker": "/assets/characters/luke-skywalker.jpg",
   "C-3PO": "/assets/characters/c-3po.jpg",
@@ -13,7 +14,7 @@ const characterPosters = {
 
 let peopleDataArray = [];
 
-// Function to create character detail (with bold header)
+// Create bold header and text
 function createCharacterDetail(header, text) {
   const characterDetail = document.createElement("p");
   const strongHeader = document.createElement("strong");
@@ -26,7 +27,7 @@ function createCharacterDetail(header, text) {
   return characterDetail;
 };
 
-// Create search form similar to the movie search form
+// Search bar
 function createSearchForm() {
   const searchForm = document.createElement("form");
   searchForm.classList.add("search-form");
@@ -47,22 +48,22 @@ function createSearchForm() {
   return searchForm;
 }
 
-// Function to display characters
+// Display the characters
 const displayCharacters = (charactersData) => {
   const mainElement = document.querySelector("main");
   const charactersList = document.createElement("ul");
   charactersList.classList.add("character-card__list");
 
   const searchForm = createSearchForm();
-  mainElement.innerHTML = ""; // Clear any existing content
-  mainElement.appendChild(searchForm); // Add search form to main element
+  mainElement.innerHTML = "";
+  mainElement.appendChild(searchForm);
 
   if (charactersData.length > 0) {
     charactersData.forEach((character) => {
       const characterItem = document.createElement("li");
       characterItem.classList.add("character-card__item");
 
-      // Add character image
+      // Add character poster
       const characterImage = document.createElement("img");
       const imageUrl = characterPosters[character.name] || "../assets/characters/default.jpg"; // Fallback to default image
       characterImage.src = imageUrl;
@@ -70,12 +71,12 @@ const displayCharacters = (charactersData) => {
       characterImage.classList.add("character-poster");
       characterItem.appendChild(characterImage);
 
-      // Add character name
+      // character name
       const characterName = document.createElement("h3");
       characterName.textContent = character.name;
       characterItem.appendChild(characterName);
 
-      // Add character details
+      // character details
       characterItem.appendChild(createCharacterDetail("Height", character.height));
       characterItem.appendChild(createCharacterDetail("Eye color", character.eye_color));
       characterItem.appendChild(createCharacterDetail("Gender", character.gender));

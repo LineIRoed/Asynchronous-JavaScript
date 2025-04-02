@@ -1,3 +1,4 @@
+// Get movie posters
 const moviePosters = {
   "A New Hope": "/assets/posters/a-new-hope.jpg",
   "The Empire Strikes Back": "/assets/posters/the-empire-strikes-back.jpg",
@@ -12,12 +13,12 @@ const moviePosters = {
 
 let movieDataArray = [];
 
-// Function to create the bold header + text
+// Create bold header and text
 function createMovieDetail(header, text) {
 const movieDetail = document.createElement("p");
 const strongHeader = document.createElement("strong");
 strongHeader.classList.add("info-header");
-strongHeader.textContent = `${header}:`; // Add the header like "Episode:"
+strongHeader.textContent = `${header}:`;
 
 movieDetail.append(strongHeader);
 movieDetail.append(document.createTextNode(` ${text}`));
@@ -37,7 +38,7 @@ searchInput.placeholder = "Search for a movie...";
 
 const searchButton = document.createElement("button");
 searchButton.classList.add("search-form__button");
-searchButton.type = "submit"; // Make the button submit the form
+searchButton.type = "submit";
 searchButton.textContent = "Search";
 
 searchForm.appendChild(searchInput);
@@ -46,22 +47,22 @@ searchForm.appendChild(searchButton);
 return searchForm;
 };
 
-// Function to display the movies
+// Display the movies
 const displayMovies = (moviesData) => {
 const mainElement = document.querySelector("main");
 const moviesList = document.createElement("ul");
 moviesList.classList.add("movies-card__list");
 
 const searchForm = createSearchForm();
-mainElement.innerHTML = ""; // Clear any existing content
-mainElement.appendChild(searchForm); // Add search form to main element
+mainElement.innerHTML = "";
+mainElement.appendChild(searchForm);
 
 if (moviesData.length > 0) {
   moviesData.forEach((movie) => {
     const movieItem = document.createElement("li");
     movieItem.classList.add("movies-card__item");
 
-    // Add movie poster
+    // Add the movie poster
     const moviePoster = document.createElement("img");
     const posterUrl = moviePosters[movie.title] || "/assets/posters/default-poster.jpg"; // Fallback if no poster found
     moviePoster.src = posterUrl;
@@ -101,7 +102,7 @@ searchForm.addEventListener("submit", (event) => {
   const searchQuery = searchForm.querySelector(".search-form__input").value.trim().toLowerCase();
 
   if (!searchQuery) {
-    displayMovies(movieDataArray); // Show all movies if search query is empty
+    displayMovies(movieDataArray);
   } else {
     const filteredMovies = movieDataArray.filter((movie) =>
       movie.title.toLowerCase().includes(searchQuery)
