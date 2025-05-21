@@ -37,3 +37,10 @@ exploreVehiclesBtn.addEventListener("click", () => {
     getVehicles();
 });
 
+// Show Movies by default when page opens
+window.addEventListener('DOMContentLoaded', () => {
+    mainElement.innerHTML = '';
+    getMovies();
+});
+  
+

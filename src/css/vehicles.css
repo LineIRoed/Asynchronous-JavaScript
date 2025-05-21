@@ -20,20 +20,24 @@ main{
 
 /* vehicle image */
 .vehicles-poster {
-    width: 100%;  
+    width: auto;  
+    height: 40%; 
+    overflow: hidden;
     border: 3px solid var(--color-black);
     border-radius: 20px;
+    object-fit: contain;
 }
 
 /* vehicle li items */
 .vehicles-card__list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--spacing-large);
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-large);
-    width: 70%;
+    width: 90%;
 }
 
 /* vehicle card item */
@@ -43,7 +47,8 @@ main{
     text-align: center;
     border: 2px solid var(--color-yellow);
     background-color: var(--color-yellow);
-    width: 70%;
+    width: 500px;
+    height: 600px;
 }
 
 /* hover effect */
@@ -76,24 +81,16 @@ main{
 }
 
 /* media queries */
-@media screen and (max-width: 1031px) {
+@media screen and (max-width: 713px) {
     .vehicles-card__item {
-        width: 100%;
-    }  
-}
-@media screen and (max-width: 830px) {
-    .vehicles-card__item {
-        width: 100%;
+        min-width: 300px;
     } 
-}
-@media screen and (max-width: 642px) {
-    .vehicles-card__item {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 524px) {
-    .vehicles-card__list {
-        width: 100%;
+} 
+@media screen and (max-width: 569px) {
+    .vehicles-poster {
+        width: 80%;
+        overflow: hidden;
+        object-fit: contain;
     }
 }
 @media screen and (max-width: 501px) {

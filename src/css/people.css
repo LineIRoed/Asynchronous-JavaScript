@@ -21,12 +21,13 @@ main{
 /* Character li items */
 .character-card__list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--spacing-large);
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-large);
-    width: 70%;
+    width: 90%;
 }
 
 
@@ -36,7 +37,8 @@ main{
     text-align: center;
     border: 2px solid var(--color-yellow);
     background-color: var(--color-yellow);
-    width: 70%;
+    width: 400px;
+    height: 500px;
 }
 
 /* Hover effect */
@@ -46,7 +48,8 @@ main{
 
 /* Character Image */
 .character-poster {
-    width: 100%; 
+    width: auto;
+    height: 40%; 
     border: 3px solid var(--color-black);
     border-radius: 20px;
 }
@@ -77,26 +80,11 @@ main{
 }
 
 /* media queries */
-@media screen and (max-width: 1031px) {
+@media screen and (max-width: 713px) {
     .character-card__item {
-        width: 100%;
-    }  
-}
-@media screen and (max-width: 830px) {
-    .character-card__item {
-        width: 100%;
+        max-height: fit-content;
     } 
-}
-@media screen and (max-width: 642px) {
-    .character-card__item {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 524px) {
-    .character-card__list {
-        width: 100%;
-    }
-}
+} 
 @media screen and (max-width: 501px) {
     .character-card__item h3 {
         font-size: var(--font-size-Xsmall);

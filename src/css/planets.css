@@ -21,12 +21,13 @@ main{
 /* planet li items */
 .planets-card__list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--spacing-large);
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-large);
-    width: 70%;
+    width: 90%;
 }
 
 /* planet card item */
@@ -36,7 +37,8 @@ main{
     text-align: center;
     border: 2px solid var(--color-yellow);
     background-color: var(--color-yellow);
-    width: 70%;
+    width: 400px;
+    height: 400px;
 }
 
 /* hover effect */
@@ -46,9 +48,12 @@ main{
 
 /* planet image */
 .planets-poster {
-    width: 100%;  
+    width: auto;  
+    height: 50%; 
+    overflow: hidden;
     border: 3px solid var(--color-black);
     border-radius: 20px;
+    object-fit: contain;
 }
 
 /* title */
@@ -77,26 +82,11 @@ main{
 }
 
 /* media queries */
-@media screen and (max-width: 1031px) {
+@media screen and (max-width: 713px) {
     .planets-card__item {
-        width: 100%;
-    }  
-}
-@media screen and (max-width: 830px) {
-    .planets-card__item {
-        width: 100%;
+        max-height: fit-content;
     } 
-}
-@media screen and (max-width: 642px) {
-    .planets-card__item {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 524px) {
-    .planets-card__list {
-        width: 100%;
-    }
-}
+} 
 @media screen and (max-width: 501px) {
     .planets-card__item h3 {
         font-size: var(--font-size-Xsmall);
