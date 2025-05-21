@@ -117,13 +117,22 @@ const displayVehicles = (vehiclesData) => {
 export const getVehicles = async () => {
     try {
         const response = await fetch("https://swapi.py4e.com/api/vehicles/");
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
         vehiclesDataArray = data.results;
 
         // display vehicles
         displayVehicles(vehiclesDataArray);
+
     } catch (error) {
         console.error("could not fetch or convert data", error);
+        const mainElement = document.querySelector("main");
+            mainElement.innerHTML = `
+                <p class="error-message">Failed to load vehicles. Please check your connection and try again later.</p>
+            `;
     }
 };
 

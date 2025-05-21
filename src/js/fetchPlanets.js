@@ -112,14 +112,23 @@ function createSearchForm() {
   export const getPlanet = async () => {
     try {
         const response = await fetch("https://swapi.py4e.com/api/planets/");
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+      
         const data = await response.json();
         planetsDataArray = data.results;
 
-        // display characters
+        // display planets
         displayPlanets(planetsDataArray);
+
     } catch (error) {
         console.error("could not fetch or convert data", error); 
-    }
+        const mainElement = document.querySelector("main");
+            mainElement.innerHTML = `
+                <p class="error-message">Failed to load planets. Please check your connection and try again later.</p>
+            `;
+        }
   };
 
   

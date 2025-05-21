@@ -116,12 +116,21 @@ searchForm.addEventListener("submit", (event) => {
 export const getMovies = async () => {
 try {
   const response = await fetch("https://swapi.py4e.com/api/films/");
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+
   const data = await response.json();
   movieDataArray = data.results;
 
   // After fetching the movies, display them
   displayMovies(movieDataArray);
+
 } catch (error) {
-  console.error("Could not fetch or convert data", error);
-}
+    console.error("Could not fetch or convert data", error);
+    const mainElement = document.querySelector("main");
+      mainElement.innerHTML = `
+        <p class="error-message">Failed to load movies. Please check your connection and try again later.</p>
+      `;
+  }
 };

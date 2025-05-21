@@ -79,6 +79,14 @@ main{
     text-transform: uppercase;
 }
 
+/* --------- */
+.error-message {
+    color: var(--color-red);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-thick);
+    text-align: center;
+}
+
 /* media queries */
 @media screen and (max-width: 713px) {
     .character-card__item {

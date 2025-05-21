@@ -114,12 +114,21 @@ const displayCharacters = (charactersData) => {
 export const getPeople = async () => {
   try {
     const response = await fetch("https://swapi.py4e.com/api/people/");
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
     const data = await response.json();
     peopleDataArray = data.results;
 
     // After fetching the characters, display them
     displayCharacters(peopleDataArray);
+
   } catch (error) {
     console.error("Could not fetch or convert data", error);
-  }
+    const mainElement = document.querySelector("main");
+      mainElement.innerHTML = `
+        <p class="error-message">Failed to load characters. Please check your connection and try again later.</p>
+      `;
+    }
 };
