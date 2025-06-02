@@ -17,7 +17,7 @@ Clone the repository:
 git clone https://github.com/LineIRoed/Asynchronous-JavaScript.git
 navigate into the project directory:
 
-cd ComponentLibrary
+cd assignment_1
 open the index.html file in your prefered web browser to get started.
 
 No dependecies or build tools are required for this project, as it is simple front-end application.
