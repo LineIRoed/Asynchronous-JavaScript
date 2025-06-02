@@ -1,4 +1,4 @@
-// Get character posters
+// Character posters
 const characterPosters = {
   "Luke Skywalker": "/assets/characters/luke-skywalker.jpg",
   "C-3PO": "/assets/characters/c-3po.jpg",
@@ -14,7 +14,7 @@ const characterPosters = {
 
 let peopleDataArray = [];
 
-// Create bold header and text
+// Create detail paragraph
 function createCharacterDetail(header, text) {
   const characterDetail = document.createElement("p");
   const strongHeader = document.createElement("strong");
@@ -25,9 +25,9 @@ function createCharacterDetail(header, text) {
   characterDetail.appendChild(document.createTextNode(` ${text}`));
 
   return characterDetail;
-};
+}
 
-// Search bar
+// Create search form
 function createSearchForm() {
   const searchForm = document.createElement("form");
   searchForm.classList.add("search-form");
@@ -48,69 +48,72 @@ function createSearchForm() {
   return searchForm;
 }
 
-// Display the characters
-const displayCharacters = (charactersData) => {
-  const mainElement = document.querySelector("main");
+// Renders character list
+function renderCharacterList(charactersData) {
   const charactersList = document.createElement("ul");
   charactersList.classList.add("character-card__list");
 
-  const searchForm = createSearchForm();
+  charactersData.forEach((character) => {
+    const characterItem = document.createElement("li");
+    characterItem.classList.add("character-card__item");
+
+    const characterImage = document.createElement("img");
+    const imageUrl = characterPosters[character.name];
+    characterImage.src = imageUrl;
+    characterImage.alt = `${character.name} Poster`;
+    characterImage.classList.add("character-poster");
+    characterItem.appendChild(characterImage);
+
+    const characterName = document.createElement("h3");
+    characterName.textContent = character.name;
+    characterItem.appendChild(characterName);
+
+    characterItem.appendChild(createCharacterDetail("Height", character.height));
+    characterItem.appendChild(createCharacterDetail("Eye color", character.eye_color));
+    characterItem.appendChild(createCharacterDetail("Gender", character.gender));
+    characterItem.appendChild(createCharacterDetail("Birth Year", character.birth_year));
+    characterItem.appendChild(createCharacterDetail("Hair color", character.hair_color));
+    characterItem.appendChild(createCharacterDetail("Skin color", character.skin_color));
+
+    charactersList.appendChild(characterItem);
+  });
+
+  return charactersList;
+}
+
+// Main display logic
+const displayCharacters = (charactersData) => {
+  const mainElement = document.querySelector("main");
   mainElement.innerHTML = "";
+
+  const searchForm = createSearchForm();
   mainElement.appendChild(searchForm);
 
   if (charactersData.length > 0) {
-    charactersData.forEach((character) => {
-      const characterItem = document.createElement("li");
-      characterItem.classList.add("character-card__item");
-
-      // Add character poster
-      const characterImage = document.createElement("img");
-      const imageUrl = characterPosters[character.name] || "../assets/characters/default.jpg"; // Fallback to default image
-      characterImage.src = imageUrl;
-      characterImage.alt = `${character.name} Poster`;
-      characterImage.classList.add("character-poster");
-      characterItem.appendChild(characterImage);
-
-      // character name
-      const characterName = document.createElement("h3");
-      characterName.textContent = character.name;
-      characterItem.appendChild(characterName);
-
-      // character details
-      characterItem.appendChild(createCharacterDetail("Height", character.height));
-      characterItem.appendChild(createCharacterDetail("Eye color", character.eye_color));
-      characterItem.appendChild(createCharacterDetail("Gender", character.gender));
-      characterItem.appendChild(createCharacterDetail("Birth Year", character.birth_year));
-      characterItem.appendChild(createCharacterDetail("Hair color", character.hair_color));
-      characterItem.appendChild(createCharacterDetail("Skin color", character.skin_color));
-
-      charactersList.appendChild(characterItem);
-    });
-
-    mainElement.append(charactersList);
+    const characterListElement = renderCharacterList(charactersData);
+    mainElement.appendChild(characterListElement);
   } else {
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "No characters found";
-    mainElement.append(errorMessage);
+    mainElement.appendChild(errorMessage);
   }
 
-  // Event listener for search form
+  // Search form handler
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const searchQuery = searchForm.querySelector(".search-form__input").value.trim().toLowerCase();
 
-    if (!searchQuery) {
-      displayCharacters(peopleDataArray); // Show all characters if search query is empty
-    } else {
-      const filteredCharacters = peopleDataArray.filter((character) =>
-        character.name.toLowerCase().includes(searchQuery)
-      );
-      displayCharacters(filteredCharacters);
-    }
+    const filteredCharacters = !searchQuery
+      ? peopleDataArray
+      : peopleDataArray.filter((character) =>
+          character.name.toLowerCase().includes(searchQuery)
+        );
+
+    displayCharacters(filteredCharacters);
   });
 };
 
-// Fetch and display characters when the page loads
+// Fetch and display characters
 export const getPeople = async () => {
   try {
     const response = await fetch("https://swapi.py4e.com/api/people/");
@@ -120,15 +123,12 @@ export const getPeople = async () => {
 
     const data = await response.json();
     peopleDataArray = data.results;
-
-    // After fetching the characters, display them
     displayCharacters(peopleDataArray);
-
   } catch (error) {
     console.error("Could not fetch or convert data", error);
     const mainElement = document.querySelector("main");
-      mainElement.innerHTML = `
-        <p class="error-message">Failed to load characters. Please check your connection and try again later.</p>
-      `;
-    }
+    mainElement.innerHTML = `
+      <p class="error-message">Failed to load characters. Please check your connection and try again later.</p>
+    `;
+  }
 };

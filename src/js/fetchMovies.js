@@ -57,7 +57,7 @@ function renderMovieList(moviesData) {
     movieItem.classList.add("movies-card__item");
 
     const moviePoster = document.createElement("img");
-    const posterUrl = moviePosters[movie.title] || "/assets/posters/default-poster.jpg";
+    const posterUrl = moviePosters[movie.title];
     moviePoster.src = posterUrl;
     moviePoster.alt = `${movie.title} Poster`;
     moviePoster.classList.add("movie-poster");
