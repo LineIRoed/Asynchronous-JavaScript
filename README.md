@@ -1,4 +1,4 @@
-# Asynchronous-JavaScript
+# assignment_1
 A library displaying information obtained from a Star Wars API, the information displayed is split into different categories.
 
 # Table of Contents
@@ -23,7 +23,7 @@ open the index.html file in your prefered web browser to get started.
 No dependecies or build tools are required for this project, as it is simple front-end application.
 
 # Usage
-To use Asynchronous-JavaScript:
+To use assignment_1:
 Open the index.html file in a browser.
 Navigate between different components by pressing their link in the navigation bar.
 Search for specific information by typing in the search bar.
