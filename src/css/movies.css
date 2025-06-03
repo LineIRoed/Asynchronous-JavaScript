@@ -48,7 +48,7 @@ main{
     border: 2px solid var(--color-yellow);
     background-color: var(--color-yellow);
     width: 500px;
-    height: 700px;
+    height: 600px;
 }
   
 /* hover effect here */
@@ -90,7 +90,7 @@ main{
 /* media queries */
 @media screen and (max-width: 559px) {
     .movies-card__item {
-        height: 800px;
+        height: 850px;
     }
 }
 @media screen and (max-width: 501px) {
